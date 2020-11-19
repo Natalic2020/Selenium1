@@ -36,11 +36,6 @@ public class AdminScenariy7 extends  TestBase{
         System.out.println("appsMenuList  size Menu " + sizeMenu);
         for (int i = 0; i < sizeMenu; i++) {
 
-            List<WebElement> formList1 = driver.findElements(By.id("box-apps-menu"));
-
-            WebElement formAppsMenu1 = formList1.get(0);
-            List<WebElement> appsMenuList1 = formAppsMenu1.findElements(By.id("app-"));
-
             driver.findElement(By.xpath("//*[@id='box-apps-menu']/li[" + (i + 1) + "]//*[@class='name']")).click();
 
             System.out.println("Click " + (i+1));
