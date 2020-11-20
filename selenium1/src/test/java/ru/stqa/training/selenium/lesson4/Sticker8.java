@@ -1,30 +1,22 @@
-package ru.stqa.training.selenium;
+package ru.stqa.training.selenium.lesson4;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import ru.stqa.training.selenium.TestBaseImplicitlyWait;
 
 import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
-public class Sticker8 extends  TestBaseimplicitlyWait{
+public class Sticker8 extends TestBaseImplicitlyWait {
 
     @Test
     public  void checkStikerByGoodsMainPageTest() {
         driver.get("http://localhost/litecart/");
-        checkStickerByList("box-most-popular");
-        checkStickerByList("box-campaigns");
-        checkStickerByList("box-latest-products");
-    }
-
-    private void checkStickerByList(String locator){
-        WebElement boxCampaigns = driver.findElement(By.id(locator));
-        List<WebElement> boxList = boxCampaigns.findElements(By.tagName("li"));
-        System.out.println(locator + "  " +boxList.size());
-        boxList.forEach(this::checkSticker);
+        List<WebElement> productList = driver.findElements(By.className("product"));
+        System.out.println(" Amount product : " + productList.size());
+        productList.forEach(this::checkSticker);
     }
 
     private void checkSticker(WebElement webElement){
@@ -39,4 +31,3 @@ public class Sticker8 extends  TestBaseimplicitlyWait{
         return false;
     }
 }
-

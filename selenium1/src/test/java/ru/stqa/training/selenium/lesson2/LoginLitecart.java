@@ -1,4 +1,4 @@
-package ru.stqa.training.selenium;
+package ru.stqa.training.selenium.lesson2;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -31,6 +31,7 @@ public class LoginLitecart {
         driver.findElement(By.name("login")).click();
         String expected = "My Store";
         String actuil = driver.getTitle();
+
         Assert.assertEquals(expected, actuil);
     }
 

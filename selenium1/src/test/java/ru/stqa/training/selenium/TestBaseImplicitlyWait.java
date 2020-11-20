@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
-public class TestBaseimplicitlyWait {
+public class TestBaseImplicitlyWait {
 
     public static ThreadLocal<WebDriver> tiDriver = new ThreadLocal<>();
     public WebDriver driver;

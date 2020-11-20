@@ -1,20 +1,24 @@
-package ru.stqa.training.selenium;
+package ru.stqa.training.selenium.lesson4;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import ru.stqa.training.selenium.TestBase;
+import ru.stqa.training.selenium.TestBaseFireFox;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertTrue;
 
-public class AdminScenariy7 extends  TestBase{
+public class AdminScenariy74 extends TestBaseFireFox {
 
     private void loginAdmin(){
+
         driver.get("http://localhost/litecart/admin/");
         driver.findElement(By.name("username")).sendKeys("admin");
         driver.findElement(By.name("password")).sendKeys("admin");
@@ -33,10 +37,13 @@ public class AdminScenariy7 extends  TestBase{
         WebElement formAppsMenu = formList.get(0);
         List<WebElement> appsMenuList = formAppsMenu.findElements(By.id("app-"));
         int sizeMenu = appsMenuList.size();
+        wait.until((WebDriver driver) -> driver.findElement(By.xpath("//*[@id='box-apps-menu']/li[1]//*[@class='name']")));
         System.out.println("appsMenuList  size Menu " + sizeMenu);
         for (int i = 0; i < sizeMenu; i++) {
 
-            driver.findElement(By.xpath("//*[@id='box-apps-menu']/li[" + (i + 1) + "]//*[@class='name']")).click();
+            WebElement itemMenu = driver.findElement(By.xpath("//*[@id='box-apps-menu']/li[" + (i + 1) + "]//*[@class='name']"));
+
+            itemMenu.click();
 
             System.out.println("Click " + (i+1));
 
