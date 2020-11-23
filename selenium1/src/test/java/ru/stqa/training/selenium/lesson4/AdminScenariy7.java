@@ -30,7 +30,7 @@ public class AdminScenariy7 extends TestBase {
     }
 
     @Test
-    public  void MenuLeftTest() {
+    public  void MenuLeftTest() throws InterruptedException {
         loginAdmin();
         List<WebElement> formList = driver.findElements(By.id("box-apps-menu"));
 
@@ -42,7 +42,8 @@ public class AdminScenariy7 extends TestBase {
         for (int i = 0; i < sizeMenu; i++) {
 
             WebElement itemMenu = driver.findElement(By.xpath("//*[@id='box-apps-menu']/li[" + (i + 1) + "]//*[@class='name']"));
-
+//            TimeUnit.SECONDS.sleep((long) 0.5);
+            TimeUnit.MILLISECONDS.sleep(500);
             itemMenu.click();
 
             System.out.println("Click " + (i+1));

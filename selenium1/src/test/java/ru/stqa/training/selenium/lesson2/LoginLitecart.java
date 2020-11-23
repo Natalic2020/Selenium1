@@ -8,20 +8,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import ru.stqa.training.selenium.TestBaseFireFoxNightly;
 
 import java.sql.SQLOutput;
 import java.util.concurrent.TimeUnit;
 
-public class LoginLitecart {
-
-    private WebDriver driver;
-    private WebDriverWait wait;
-
-    @Before
-    public void start(){
-        driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, 10);
-    }
+public class LoginLitecart extends TestBaseFireFoxNightly {
 
     @Test
     public void loginAdminTest(){
@@ -33,11 +25,5 @@ public class LoginLitecart {
         String actuil = driver.getTitle();
 
         Assert.assertEquals(expected, actuil);
-    }
-
-    @After
-    public void stop(){
-        driver.quit();
-        driver = null;
     }
 }
