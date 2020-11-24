@@ -9,11 +9,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.stqa.training.selenium.TestBaseFireFoxNightly;
+import ru.stqa.training.selenium.TestBaseIEImplicitly;
 
 import java.sql.SQLOutput;
 import java.util.concurrent.TimeUnit;
 
-public class LoginLitecart extends TestBaseFireFoxNightly {
+public class LoginLitecart extends TestBaseIEImplicitly {
 
     @Test
     public void loginAdminTest(){
