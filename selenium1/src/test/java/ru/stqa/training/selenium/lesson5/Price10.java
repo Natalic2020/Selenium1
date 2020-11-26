@@ -111,5 +111,4 @@ import static org.junit.Assert.assertTrue;
            rgb.put("blue", blue);
            return rgb;
        }
-
 }
