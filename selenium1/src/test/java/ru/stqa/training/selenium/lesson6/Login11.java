@@ -27,7 +27,7 @@ public class Login11 extends TestBaseImplicitlyWait {
     }
 
     @Test
-    public  void checkPriceTest() throws InterruptedException {
+    public  void checkLoginTest() throws InterruptedException {
         createNewUser();
         logout();
         login();
