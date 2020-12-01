@@ -35,11 +35,11 @@ public class Cart13 extends TestBaseFireFox {
 
             WebElement dataTable = driver.findElement(By.className("dataTable"));
 
-            WebElement cartItem = wait.until(visibilityOf(driver.findElement(By.cssSelector("button[name=remove_cart_item]"))));
+            WebElement cartItem = driver.findElement(By.cssSelector("[name=remove_cart_item]"));
             cartItem.click();
             wait.until(ExpectedConditions.stalenessOf(dataTable));
 
-            removeCartItems = driver.findElements(By.cssSelector("button[name=remove_cart_item]"));
+            removeCartItems = driver.findElements(By.cssSelector("[name=remove_cart_item]"));
             System.out.println("removeCartItem " + removeCartItems.size());
         }
     }
