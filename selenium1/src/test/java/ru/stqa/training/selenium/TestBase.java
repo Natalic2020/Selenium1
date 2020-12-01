@@ -22,7 +22,7 @@ public class TestBase {
     @Before
     public void start(){
         driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, 11);
+        wait = new WebDriverWait(driver, 10);
     }
 
     public boolean areElementsPresent(By locator){
