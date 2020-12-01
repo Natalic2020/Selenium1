@@ -6,12 +6,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import ru.stqa.training.selenium.TestBase;
+import ru.stqa.training.selenium.TestBaseFireFox;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
-public class Cart13 extends TestBase {
+public class Cart13 extends TestBaseFireFox {
 
     @Test
     public  void checkCartTest() throws InterruptedException {
@@ -26,18 +28,17 @@ public class Cart13 extends TestBase {
         List<WebElement> removeCartItems = driver.findElements(By.name("remove_cart_item"));
         System.out.println("removeCartItem " + removeCartItems.size());
 
+        WebElement shotcut = driver.findElement(By.cssSelector("[href='#']"));
+        shotcut.click();
+
         while (driver.findElements(By.name("remove_cart_item")).size() > 0) {
 
-            WebElement item = driver.findElements(By.cssSelector("td.item")).get(0);
+            WebElement dataTable = driver.findElement(By.className("dataTable"));
 
-        try {
             WebElement cartItem = wait.until(visibilityOf(driver.findElement(By.cssSelector("button[name=remove_cart_item]"))));
             cartItem.click();
-            wait.until(ExpectedConditions.stalenessOf(item));
-        } catch (Exception e){
-            System.out.println(e.getMessage());
-            continue;
-        }
+            wait.until(ExpectedConditions.stalenessOf(dataTable));
+
             removeCartItems = driver.findElements(By.cssSelector("button[name=remove_cart_item]"));
             System.out.println("removeCartItem " + removeCartItems.size());
         }
