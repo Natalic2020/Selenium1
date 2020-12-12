@@ -3,14 +3,11 @@ package ru.stqa.training.selenium.lesson5;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import ru.stqa.training.selenium.TestBase;
 import ru.stqa.training.selenium.TestBaseImplicitlyWait;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertTrue;

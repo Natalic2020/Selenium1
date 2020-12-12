@@ -5,18 +5,14 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import ru.stqa.training.selenium.TestBase;
+import ru.stqa.training.selenium.TestBaseChrome;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertTrue;
 
-public class AdminScenariy7 extends TestBase {
+public class AdminScenariy7 extends TestBaseChrome {
 
     private void loginAdmin(){
         driver.get("http://localhost/litecart/admin/");
